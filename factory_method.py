@@ -19,25 +19,25 @@ class CsvReport(IReport):
     def generate(self):
         print("Generando reporte en formato Csv")
 
-# Clase base abstracta para el creador
+# Clase base abstracta para crear las factorias
 class GenerateReport(ABC):
     @abstractmethod
     def get_report(self):
         pass
 
    
-# Implementación concreta del creator
+# Implementación del creador de la factoria
 class GetReportExcell(GenerateReport):
     def get_report(self):
       return ExcelReport()
 
-
+# Implementación del creador de la factoria
 class GetReportCsv(GenerateReport):
     def get_report(self):
       return CsvReport()
 
 
-
+# Implementación del creador de la factoria
 class GetReportPdf(GenerateReport):
     def get_report(self):
       return PDFReport()
